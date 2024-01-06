@@ -13,6 +13,7 @@ mongoose.connect(
     '@node-rest-proj.7a3ggsa.mongodb.net/?retryWrites=true&w=majority', 
     {}
 ).then(() => console.log('MongoDB Connected')).catch(err => console.error(err));
+mongoose.Promise = global.Promise;
 
 app.use(morgan('dev'));
 app.use(bodyParser.urlencoded({extended: false}));
