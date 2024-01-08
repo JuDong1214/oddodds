@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+.Navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    background-color: rgba(0, 0, 0, 0);
+    width: 100%;
+    box-sizing: border-box;
+    position: relative;
+    top: 0;
+    z-index: 2;
+  }
+  
+  .Navbar a {
+    text-decoration: none;
+    color: #ffffff;
+    padding: 0 20px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    position: relative;
+    transition: color 0.3s ease-out;
+  }
+  
+  .Navbar a::after {
+    content: '';
+    display: block;
+    margin: auto;
+    height: 2px;
+    width: 0px;
+    background: transparent;
+    transition: width 0.3s ease, background-color 0.3s ease;
+  }
+  
+  .Navbar a:hover::after {
+    width: 100%;
+    background: white; /* Color of the underline on hover */
+  }
+  
+  .Navbar a.active::after {
+    width: 100%;
+    background: white; /* Color of the underline for active link */
+  }
+  
+  .Navbar a:hover,
+  .Navbar a.active {
+    color: rgb(255, 255, 255); /* Text color on hover and for active link */
+  }

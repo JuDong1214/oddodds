@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=YourFontFamily&display=swap');
+
+.nba {
+    position: realtive;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #ffffff;
+    font-size: 30px;
+    font-family: 'YourFontFamily', Consolas;
+  }
+
+  .grid {
+    display: flex;
+    flex-direction: column;
+}
+
+.gameRow {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.matchup {
+    font-weight: bold;
+    margin-right: 20px;
+}
+
+.odds {
+    margin-right: 15px;
+}
+  
