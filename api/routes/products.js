@@ -24,7 +24,7 @@ router.get('/', (req, res, next) =>{
                     awaySpread: doc.awaySpread,
                     homeSpreadPrice: doc.homeSpreadPrice,
                     awaySpreadPrice: doc.awaySpreadPrice,
-                    OverTotal: doc.homeOverTotalrice,
+                    OverTotal: doc.OverTotal,
                     UnderTotal: doc.UnderTotal,
                     OverTotalPrice: doc.OverTotalPrice,
                     UnderTotalPrice: doc.UnderTotalPrice,

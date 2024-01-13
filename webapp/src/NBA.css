@@ -1,33 +1,67 @@
 @import url('https://fonts.googleapis.com/css2?family=YourFontFamily&display=swap');
 
 .nba {
-    position: realtive;
-    display: flex;
+    color: white;
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    align-items: center;
     justify-content: center;
-    align-items: center;
+}
+
+.nba h1 {
+    text-align: center; /* Center the text horizontally */
+}
+
+.nba table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.nba th, .nba td {
+    border: 1px solid white;
+    padding: 16px;
     text-align: center;
-    color: #ffffff;
-    font-size: 30px;
-    font-family: 'YourFontFamily', Consolas;
-  }
-
-  .grid {
-    display: flex;
-    flex-direction: column;
 }
 
-.gameRow {
-    display: flex;
-    align-items: center;
-    margin-bottom: 10px;
+.nba th {
+    background-color: #444;
 }
 
-.matchup {
-    font-weight: bold;
-    margin-right: 20px;
+.nba td {
+    background-color: #555;
 }
 
 .odds {
-    margin-right: 15px;
+    display: flex;
+    flex-direction: column; /* Stack vertically */
+    align-items: center; /* Center align the items */
 }
-  
+
+.odd-box {
+    display: block; /* Take the full width */
+    width: 100%; /* Full width of the parent */
+    margin: 4px 0; /* Vertical margin */
+    padding: 3px;
+    border: 1px solid #FFF; /* White border */
+    border-radius: 4px; /* Rounded corners */
+    cursor: pointer; /* Hand cursor to mimic clickable */
+    background-color: rgba(255, 255, 255, 0.1); /* Slightly transparent white background */
+    text-align: center; /* Center the text inside the box */
+}
+
+.odd-box:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Darker on hover */
+}
+
+.matchup-container {
+    display: flex;
+    flex-direction: column; /* Stack children vertically */
+    align-items: center;    /* Center-align the items */
+    justify-content: center; /* Center along the cross-axis */
+    height: 100%; /* Full height of the cell */
+}
+
+.matchup-container > div {
+    margin: 2px 0; /* Spacing between team names and 'vs' */
+}
+

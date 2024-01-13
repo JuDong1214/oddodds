@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import './NBA.css';
+import './NBAspread.css';
 
 const formatOdds = (odds) => {
     if (odds > 0) {
@@ -9,7 +9,7 @@ const formatOdds = (odds) => {
     return odds; // Negative numbers already have a '-' sign
 };
 
-const NBA = () => {
+const NBASpreads = () => {
     const [games, setGames] = useState([]);
     const [sportsbooks, setSportsbooks] = useState([]);
 
@@ -43,8 +43,10 @@ const NBA = () => {
 
             const game = gamesMap.get(product.gameID);
             game.odds[product.book] = {
-                homePrice: product.homePrice,
-                awayPrice: product.awayPrice
+                homeSpread: product.homeSpread,
+                awaySpread: product.awaySpread,
+                homeSpreadPrice: product.homeSpreadPrice,
+                awaySpreadPrice: product.awaySpreadPrice
             };
         });
 
@@ -57,8 +59,8 @@ const NBA = () => {
     };
 
     return (
-        <div className="nba">
-            <h1>NBA ML Odds Today</h1>
+        <div className="nba-spreads2">
+            <h1>NBA Spread Odds Today</h1>
             <table>
                 <thead>
                     <tr>
@@ -70,7 +72,7 @@ const NBA = () => {
                     {games.map(game => (
                         <tr key={game.gameID}>
                             <td>
-                                <div className="matchup-container">
+                                <div className="matchup-container2">
                                     <div>{game.home}</div>
                                     <div>vs</div>
                                     <div>{game.away}</div>
@@ -79,9 +81,11 @@ const NBA = () => {
                             {sportsbooks.map(book => (
                                 <td key={book}>
                                     {game.odds[book] ? (
-                                        <div className="odds">
-                                            <span className="odd-box">{formatOdds(game.odds[book].homePrice)}</span>
-                                            <span className="odd-box">{formatOdds(game.odds[book].awayPrice)}</span>
+                                        <div className="odds2">
+                                            <div className="spread-box2">{formatOdds(game.odds[book].homeSpread)}</div>
+                                            <div className="odds-box2">{formatOdds(game.odds[book].homeSpreadPrice)}</div>
+                                            <div className="spread-box2">{formatOdds(game.odds[book].awaySpread)}</div>
+                                            <div className="odds-box2">{formatOdds(game.odds[book].awaySpreadPrice)}</div>
                                         </div>
                                     ) : 'N/A'}
                                 </td>
@@ -92,6 +96,7 @@ const NBA = () => {
             </table>
         </div>
     );
+    
 };
 
-export default NBA;
+export default NBASpreads;
